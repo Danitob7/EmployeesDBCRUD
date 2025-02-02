@@ -1,0 +1,31 @@
+﻿@*
+
+*@
+@{
+}
+@model List<EmployeesDBProject.Models.Entities.Employee>
+
+<h1>Employees</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Phone Number</th>
+			<th>  </th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var employee in Model){
+			<tr>
+				<td>@employee.Name</td>
+				<td>@employee.Email</td>
+				<td>@employee.Phone</td>
+				<td>
+					<a class="btn btn-primary" asp-controller="Employees" asp-action="Edit" asp-route-id="@employee.Id">Edit</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
